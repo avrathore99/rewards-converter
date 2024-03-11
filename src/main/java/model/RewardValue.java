@@ -14,12 +14,12 @@ public class RewardValue
 
     public RewardValue(double cashValue) {
         this.cashValue = cashValue;
-        this.milesValue = (int) (cashValue / 0.0035); // Converting cash to miles
+        this.milesValue = (int) (cashValue / 0.0035);
     }
 
     // Constructor accepting miles value
     public RewardValue(int milesValue) {
         this.milesValue = milesValue;
-        this.cashValue = milesValue * 0.0035; // Converting miles to cash
+        this.cashValue = milesValue * 0.0035;
     }
 }
