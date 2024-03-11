@@ -7,17 +7,16 @@ public class RewardsConverter {
         var scanner = new Scanner(System.in);
         System.out.println("Welcome to the Credit Card Rewards Converter!");
         System.out.println("Please enter a miles value to convert to cash value: ");
-        var input_value = scanner.nextInt();
-        int mileValue;
+        var input_value = scanner.nextLine();
+        double cashValue;
         try {
-            System.out.println("converting $" + input_value + " to miles");
-            RewardValue rewardsValue = new RewardValue(input_value);
-            System.out.println("$" + input_value + " is worth " + rewardsValue.getCashValue() + " Cash");
+            cashValue = Double.parseDouble(input_value);
         } catch (NumberFormatException exception) {
             System.out.println("Could not parse input value as a double, exiting");
             return;
         }
-
-
+        System.out.println("converting $" + input_value + " to miles");
+        RewardValue rewardsValue = new RewardValue(cashValue);
+        System.out.println("$" + input_value + " is worth " + rewardsValue.getMilesValue() + " miles");
     }
 }
